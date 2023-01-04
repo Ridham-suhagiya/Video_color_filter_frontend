@@ -1,0 +1,108 @@
+.form{
+	background-color: rgba(200,200,200,0.25);
+	border-radius: 10px;
+	margin:5vmin 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height:fit-content;
+	padding:2% 2%;
+}
+
+.form .h1{
+	font-size: 100px;
+}
+
+.heading h1{
+	text-align: center;
+}
+
+.btn{
+	width:50%;
+	height:5vh;
+	margin:10px auto;
+	border-radius: 10px;
+	background-color: #ffffff;
+	border-width: 0;
+	margin: 0px ;
+}
+
+.upload-section{
+	width: 100%;
+}
+
+.form-info-section{
+	height: 20%;
+	margin:5%;
+	text-align: center;
+	
+
+}
+
+.input-section{
+	display: flex;
+	justify-content: center;
+	margin:2% 10%;
+	margin-left: 10%;
+}
+
+.prev_image{
+	object-fit: cover;
+	max-width: 15vw;
+	border-radius: 10px;
+	font-size: 2vmin;
+}
+
+.preview-file{
+	margin:0px 24%;
+	cursor: copy;
+}
+
+.file-input-box{
+	margin:10px 10px;
+}
+
+.input-section	input{
+	display: none;
+}
+
+
+
+.button-cover{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.btn{
+	cursor: pointer;
+	font-size: 2vmin;
+	padding:2vmin 2vmin;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+}
+
+
+
+.input-section label{
+	cursor: copy;
+	background-color: royalblue;
+	color: black;
+	border-radius: 10px;
+	padding:2%;
+	margin:2%;
+	font-size: 1.7vmin;
+}
+
+
+
+
+
+
+
+
+
+
+
