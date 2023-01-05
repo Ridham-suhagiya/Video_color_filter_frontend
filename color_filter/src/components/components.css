@@ -54,7 +54,9 @@
 }
 
 .preview-file{
-	margin:0px 24%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	cursor: copy;
 }
 
