@@ -46,6 +46,14 @@
 	margin-left: 10%;
 }
 
+.prev_file{
+	object-fit: cover;
+	max-width: 15vw;
+	border-radius: 10px;
+	font-size: 2vmin;
+	display: none;
+}
+
 .prev_image{
 	object-fit: cover;
 	max-width: 15vw;
