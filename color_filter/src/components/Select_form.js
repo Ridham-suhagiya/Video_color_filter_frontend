@@ -9,7 +9,7 @@ const Select_form = (file_byte_setter) => {
  	function get_file(e){
 	    let url = URL.createObjectURL(e.target.files[0]);
 	    file_url_setter(url);
-	    if (e.target.files[0].type.split('/')[0] == 'video'){
+	    if (e.target.files[0].type.split('/')[0] === 'video'){
 	    	document.getElementById('prev_file').setAttribute('src',url);
 	    	document.getElementById('prev_file').style.display = 'block';
 	    	document.getElementById('prev_image').style.display = 'none';
@@ -28,11 +28,11 @@ const Select_form = (file_byte_setter) => {
 		border('color-section-div')
 		border('image_prev_div')
 		let flag = true;
-		if (inputs[0].value == ''){
+		if (inputs[0].value === ''){
 			border('color-section-div', 'dashed', 'red', 'block')
 			flag = false;	
 		}
-		if (inputs[1].value == ''){
+		if (inputs[1].value === ''){
 			border('image_prev_div', 'dashed', 'red', 'block')	
 			flag = false;
 		}
@@ -74,7 +74,7 @@ const Select_form = (file_byte_setter) => {
 		if (new_bytes  != null){
 			// document.getElementById('prev_file').src = 'http://127.0.0.1:8000/static/output.mp4';
 			let strHtml = `<img className="prev_image"  alt=''  />`;
-			if (new_bytes.file == 'video'){
+			if (new_bytes.file === 'video'){
 				 strHtml = `<video className="prev_file"  alt=''  autoPlay={true} muted={true}></video>`;
 			}
 			let result_image = document.getElementsByClassName('result_file')[0];
@@ -82,7 +82,7 @@ const Select_form = (file_byte_setter) => {
 			result_image.insertAdjacentHTML('beforeend', strHtml);
 			result_image.insertAdjacentHTML('beforeend', strHtml);
 			download_link = 'http://127.0.0.1:8000/static/output.mp4';
-			if (new_bytes.file == 'video'){
+			if (new_bytes.file === 'video'){
 				result_image.getElementsByTagName('video')[0].src = file_url;
 				result_image.getElementsByTagName('video')[1].src = 'http://127.0.0.1:8000/static/output.mp4';
 			}
@@ -96,10 +96,6 @@ const Select_form = (file_byte_setter) => {
 		}	
 	}, [new_bytes])
 
-	function give_file_type(bytes) {
-		return bytes.split(':')[1].split('/')[0];
-	}
-
 	function select_option(e){
 		let selected_color = e.target.value;
 		document.getElementById('selected_color').value = selected_color;
@@ -108,7 +104,7 @@ const Select_form = (file_byte_setter) => {
 	return (
 		<div className='form'>
 			<div id='form_content'>
-			{ (new_bytes == null)? (<div>
+			{ (new_bytes === null)? (<div>
 										<div className="form-info-section">
 											Upload your file here..
 										</div>
