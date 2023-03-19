@@ -1,7 +1,7 @@
 import React from 'react';
 import './components.css';
 import  placeholder from "../assets/placeholder.gif";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 const SelectForm = (file_byte_setter) => {
 	const [new_bytes , new_byte_setter] = useState(null);	
 	const [file_url, file_url_setter] = useState(null);
@@ -68,9 +68,9 @@ const SelectForm = (file_byte_setter) => {
 	  		reader.readAsDataURL(img);
   		}
 	}
-
+	const download_link = useRef('')
 	useEffect(() => {
-		let download_link;
+		
 		if (new_bytes  != null){
 			// document.getElementById('prev_file').src = 'http://127.0.0.1:8000/static/output.mp4';
 			let strHtml = `<img className="prev_image"  alt=''  />`;
@@ -81,17 +81,17 @@ const SelectForm = (file_byte_setter) => {
 			console.log(new_bytes)
 			result_image.insertAdjacentHTML('beforeend', strHtml);
 			result_image.insertAdjacentHTML('beforeend', strHtml);
-			download_link = 'http://127.0.0.1:8000/static/output.mp4';
+			download_link.current = 'http://127.0.0.1:8000/static/output.mp4';
 			if (new_bytes.file === 'video'){
 				result_image.getElementsByTagName('video')[0].src = file_url;
 				result_image.getElementsByTagName('video')[1].src = 'http://127.0.0.1:8000/static/output.mp4';
 			}
 			else{
-				download_link = `http://127.0.0.1:8000/static/output.${new_bytes.file_type}`;
+				download_link.current = `http://127.0.0.1:8000/static/output.${new_bytes.file_type}`;
 				result_image.getElementsByTagName('img')[0].src = file_url;
 				result_image.getElementsByTagName('img')[1].src = `http://127.0.0.1:8000/static/output.${new_bytes.file_type}`;
 			}
-			document.getElementById('download_link').href = download_link;
+			document.getElementById('download_link').href = download_link.current;
 			document.getElementById('download_link').download = 1;
 		}	
 	}, [new_bytes, file_url])
@@ -99,6 +99,9 @@ const SelectForm = (file_byte_setter) => {
 	function select_option(e){
 		let selected_color = e.target.value;
 		document.getElementById('selected_color').value = selected_color;
+	}
+	function back() {
+		return window.origin;
 	}
 	
 	return (
@@ -151,8 +154,8 @@ const SelectForm = (file_byte_setter) => {
 				<div className='result_file'>
 				</div>
 				<div style={{display:'flex', 'justifyContent':'space-between'}}>
-					<a onClick={()=> window.location.reload()}  href = '' className='get_to_home'>Make more</a>
-				    <a className='btn' id='download_link'   href = ''>
+					<a href= {back()}  className='get_to_home'>Make more</a>
+				    <a className='btn' id='download_link' href = {download_link.current}>
 						Download
 				    </a>
 				</div>
