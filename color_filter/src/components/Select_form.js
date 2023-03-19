@@ -2,7 +2,7 @@ import React from 'react';
 import './components.css';
 import  placeholder from "../assets/placeholder.gif";
 import { useState, useEffect } from 'react';
-const selectForm = (file_byte_setter) => {
+const SelectForm = (file_byte_setter) => {
 	const [new_bytes , new_byte_setter] = useState(null);	
 	const [file_url, file_url_setter] = useState(null);
 
@@ -165,4 +165,4 @@ const selectForm = (file_byte_setter) => {
 	)
 }
 
-export default Select_form
+export default SelectForm;
