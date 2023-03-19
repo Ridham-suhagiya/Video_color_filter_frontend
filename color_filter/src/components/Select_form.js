@@ -2,7 +2,7 @@ import React from 'react';
 import './components.css';
 import  placeholder from "../assets/placeholder.gif";
 import { useState, useEffect } from 'react';
-const Select_form = (file_byte_setter) => {
+const selectForm = (file_byte_setter) => {
 	const [new_bytes , new_byte_setter] = useState(null);	
 	const [file_url, file_url_setter] = useState(null);
 
@@ -94,7 +94,7 @@ const Select_form = (file_byte_setter) => {
 			document.getElementById('download_link').href = download_link;
 			document.getElementById('download_link').download = 1;
 		}	
-	}, [new_bytes])
+	}, [new_bytes, file_url])
 
 	function select_option(e){
 		let selected_color = e.target.value;
