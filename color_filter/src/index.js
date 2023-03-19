@@ -9,6 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <script src="../../Jquery/prettify.js"></script>
   </React.StrictMode>
 );
 

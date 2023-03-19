@@ -1,12 +1,13 @@
 .form{
 	background-color: rgba(200,200,200,0.25);
 	border-radius: 10px;
-	margin:5vmin 0px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height:fit-content;
 	padding:2% 2%;
+/*	width: 26rem;*/
+	min-width: 36rem;
 }
 
 .form .h1{
@@ -18,13 +19,12 @@
 }
 
 .btn{
-	width:50%;
-	height:5vh;
-	margin:10px auto;
+	padding: 4px;
 	border-radius: 10px;
 	background-color: #ffffff;
-	border-width: 0;
-	margin: 0px ;
+	font-size: 1rem;
+	color : black;
+	cursor: pointer;
 }
 
 .upload-section{
@@ -35,8 +35,6 @@
 	height: 20%;
 	margin:5%;
 	text-align: center;
-	
-
 }
 
 .input-section{
@@ -52,6 +50,7 @@
 	border-radius: 10px;
 	font-size: 2vmin;
 	display: none;
+	margin:auto;
 }
 
 .prev_image{
@@ -59,13 +58,22 @@
 	max-width: 15vw;
 	border-radius: 10px;
 	font-size: 2vmin;
+	margin:auto;
 }
 
 .preview-file{
-	width: 100%;
+	width: fit-content;
+	margin: auto;
 	display: flex;
 	justify-content: center;
 	cursor: copy;
+}
+
+#image_prev_div{
+	border-width: 0.2px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
 }
 
 .file-input-box{
@@ -76,24 +84,11 @@
 	display: none;
 }
 
-
-
 .button-cover{
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	
 }
-
-.btn{
-	cursor: pointer;
-	font-size: 2vmin;
-	padding:2vmin 2vmin;
-	width: fit-content;
-	display: flex;
-	align-items: center;
-}
-
 
 
 .input-section label{
@@ -106,10 +101,91 @@
 	font-size: 1.7vmin;
 }
 
+.filter-option{
+	display:flex;
+	justify-content:space-around;
+	flex-direction: column;
+	margin: 4%;
+	border-radius: 5px;
+	border-width: 0.2px;
 
+}
 
+.filter-option h4{
+	text-align: center;
+	margin-top:0px;
+	margin-bottom: 10px;
+}
+.filter-option input{
+	width: 1.5em;
+	height:1.5em;
+}
 
+.color-section{
+	width: 100%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
 
+.hidden_text{
+	font-size: 10px;
+	color:red;
+	text-align: center;
+	display: none;
+	width: inherit;
+}
+
+.result_file{
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px;
+}
+
+.result_file > img{
+	object-fit: cover;
+    max-width: 15vw;
+    font-size: 2vmin;
+    margin: auto;
+    padding: 12px;
+    border-radius: 26px;
+    width: 70rem;
+}
+
+.result_file > video{
+	object-fit: cover;
+    max-width: 15vw;
+    font-size: 2vmin;
+    margin: auto;
+    padding: 12px;
+    border-radius: 26px;
+}
+
+.get_to_home{
+	color: white;
+	margin-top: 10px;
+	font-size: 12px;
+    text-decoration-line: underline;  
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+
+@media only screen and (max-width: 1180px){
+	.color-section{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin:0px 17%;
+		text-align: center;
+		width: fit-content;
+	}
+
+	.interactive-section{
+		width: 50%;
+	}
+}
 
 
 

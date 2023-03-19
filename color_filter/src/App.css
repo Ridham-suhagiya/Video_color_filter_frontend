@@ -1,31 +1,39 @@
 .App{
-  background-image: url('./assets/background.jpeg');
+  display:grid;
+  height: 100%;
+}
+
+.background_image{
+    background-image: url('./assets/background.jpeg');
   background-size:cover;
-  min-height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
+  background-attachment: fixed;
+  width:100%;
 }
 
 .App-header{
   background-color: rgba(0, 0, 0, 0.8);
-  height: 100vh;
   width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
-.heading .h1{
-  margin: 6% 2vmin;
-}
 
 .heading{
   display: flex;
   justify-content: center;
 }
 
+
 .interactive-section{
-  width: 30%;
-  margin: 2% auto;
+  margin: 1rem auto;
 }
+
