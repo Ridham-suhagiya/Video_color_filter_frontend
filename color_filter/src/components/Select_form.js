@@ -151,8 +151,8 @@ const SelectForm = (file_byte_setter) => {
 				<div className='result_file'>
 				</div>
 				<div style={{display:'flex', 'justifyContent':'space-between'}}>
-					<a onClick={()=> window.location.reload()} className='get_to_home'>Make more</a>
-				    <a className='btn' id='download_link'>
+					<a onClick={()=> window.location.reload()}  href = '' className='get_to_home'>Make more</a>
+				    <a className='btn' id='download_link'   href = ''>
 						Download
 				    </a>
 				</div>
