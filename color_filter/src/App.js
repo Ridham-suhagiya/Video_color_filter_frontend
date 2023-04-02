@@ -1,5 +1,5 @@
 import './App.css';
-// import SelectFrom from './components/Select_form';
+import SelectFrom from './components/Select_form';
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
             <div className="heading">
                 <h1>Color Filter</h1>
             </div>
-            {/*<SelectFrom  />*/}
+            <SelectFrom  />
           </div>
         </header>
       </div>
