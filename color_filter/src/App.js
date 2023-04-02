@@ -1,5 +1,5 @@
 import './App.css';
-import SelectFrom from './components/Select_form';
+// import SelectFrom from './components/Select_form';
 
 function App() {
 
