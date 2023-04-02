@@ -11,7 +11,7 @@ function App() {
             <div className="heading">
                 <h1>Color Filter</h1>
             </div>
-            <SelectFrom  />
+            {/*<SelectFrom  />*/}
           </div>
         </header>
       </div>
