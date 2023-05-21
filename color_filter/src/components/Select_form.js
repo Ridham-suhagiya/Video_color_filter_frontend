@@ -51,9 +51,11 @@ const SelectForm = (file_byte_setter) => {
 		if (resp){
 			let color = document.getElementById('selected_color').value;
 	  		let img = document.getElementById('file_input').files[0];
-		    let reader = new FileReader()
+		    let reader = new FileReader();
 	  		reader.onload = function(e) {
-		  		fetch('http://127.0.0.1:8000',
+				let url = process.env.REACT_APP_API;
+				console.log(url);
+		  		fetch(url,
 					{
 						method:'POST',
 						headers: {"Content-Type":"application/json" ,'accept': 'application/json', "Access-Control-Allow-Origin":1},
@@ -70,7 +72,6 @@ const SelectForm = (file_byte_setter) => {
 	}
 	const download_link = useRef('')
 	useEffect(() => {
-		
 		if (new_bytes  != null){
 			// document.getElementById('prev_file').src = 'http://127.0.0.1:8000/static/output.mp4';
 			let strHtml = `<img className="prev_image"  alt=''  />`;
@@ -81,15 +82,15 @@ const SelectForm = (file_byte_setter) => {
 			console.log(new_bytes)
 			result_image.insertAdjacentHTML('beforeend', strHtml);
 			result_image.insertAdjacentHTML('beforeend', strHtml);
-			download_link.current = 'http://127.0.0.1:8000/static/output.mp4';
+			download_link.current = `${process.env.REACT_APP_API}/static/output.mp4`;
 			if (new_bytes.file === 'video'){
 				result_image.getElementsByTagName('video')[0].src = file_url;
-				result_image.getElementsByTagName('video')[1].src = 'http://127.0.0.1:8000/static/output.mp4';
+				result_image.getElementsByTagName('video')[1].src = `${process.env.REACT_APP_API}/static/output.mp4`;
 			}
 			else{
-				download_link.current = `http://127.0.0.1:8000/static/output.${new_bytes.file_type}`;
+				download_link.current = `${process.env.REACT_APP_API}/static/output.${new_bytes.file_type}`;
 				result_image.getElementsByTagName('img')[0].src = file_url;
-				result_image.getElementsByTagName('img')[1].src = `http://127.0.0.1:8000/static/output.${new_bytes.file_type}`;
+				result_image.getElementsByTagName('img')[1].src = `${process.env.REACT_APP_API}/static/output.${new_bytes.file_type}`;
 			}
 			document.getElementById('download_link').href = download_link.current;
 			document.getElementById('download_link').download = 1;
